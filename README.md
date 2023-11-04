@@ -247,7 +247,7 @@ public class RedisService {
             log.info("member_id = {}", user.getUserId());
         }
 					
-				...(중간 생략)
+		...(중간 생략)
 
         // 로그인 할때 refreshToken을 Redis에 저장
 				redisService.setValues(credential.getEmail()+"_refreshToken", tokenDto.getRefreshToken());
@@ -272,26 +272,26 @@ public class RedisService {
     public void reissueToken(HttpServletRequest request, HttpServletResponse response) {
         log.info("AuthService_reissueToken -> AccessToken 재발행");
 				
-				//1. Header에서 refreshToken 꺼내기
+	//1. Header에서 refreshToken 꺼내기
         String refreshToken = request.getHeader("refresh-token");
 
         //2. refreshToken JWT 해독
         Claims refreshTokenClaims = jwtProvider.parseClaims(refreshToken);
         
-				//3. 해독 한 뒤 , email 찾기
-				String email = refreshTokenClaims.getSubject();
+	//3. 해독 한 뒤 , email 찾기
+	String email = refreshTokenClaims.getSubject();
         log.info("해독해서 뽑은 이메일 : " + email);
 
-				****//4. redis에서 refreshToken 조회
+	****//4. redis에서 refreshToken 조회
         **String findRefreshToken = redisService.getValues(email + "_refreshToken");**
 
         if (findRefreshToken != null) {
             log.info(email + "님의 refreshToken : " + findRefreshToken);
 						
-						//5. 엑세스 토큰 JWT 재생성
+	//5. 엑세스 토큰 JWT 재생성
             TokenDto newAccessToken = jwtProvider.generateTokenDto(findRefreshToken);
             
-						//6. 재생성한 엑세스 토큰 Header에 저장
+	//6. 재생성한 엑세스 토큰 Header에 저장
             response.setHeader("access-token", newAccessToken.getAccessToken());
             log.info(email + "님의 accessToken 재발급 : " + newAccessToken.getAccessToken());
         } else {
