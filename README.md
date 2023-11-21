@@ -119,7 +119,7 @@ Payload는 클레임 정보를 포함하며, JSON 형식으로 인코딩
 - 한번에 딱 하나의 명령어만 실행하기 때문에 , 긴 처리시간이 필요한 명령어를 쓰면 불리하고 처리하기 전까지 다른 서비스 요청을 받아들일수 없고, 서버가 다운되는 현상
 - 따라서 전체 데이터를 다루는 시간복잡도를 가진 O(N) 명령어 keys , flush , getall 는 주의해서 사용할 필요가 있다.
 
-# 4️⃣ AccessToken
+# 4️⃣ AccessToken in
 
 - 서버에 **API 를 직접 요청(Access)** 할때 사용
 - **사용자 인증정보를 담는다**
@@ -300,3 +300,9 @@ public class RedisService {
         }
     }
 ```
+
+----
+💭🤔AccessToken 만료 => RefreshToken 으로 AccessToken 재발급 하는 방법말고 
+AccessToken 만료되기 전에 재발급하는 방법 ???
+
+ - 공부해서 정리하기
