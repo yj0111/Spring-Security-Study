@@ -302,7 +302,4 @@ public class RedisService {
 ```
 
 ----
-💭🤔AccessToken 만료 => RefreshToken 으로 AccessToken 재발급 하는 방법말고 
-AccessToken 만료되기 전에 재발급하는 방법 ???
 
- - 공부해서 정리하기
