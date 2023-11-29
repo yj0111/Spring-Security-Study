@@ -7,6 +7,7 @@
 
 **OAuth 2.0**은 다양한 클라이언트 환경에 적합한 인증*(Authentication)* 및 인가*(Authorization)*의 부여*(위임)* 방법*(Grant Type)*을 제공하고, 그 결과로 클라이언트에 접근 토큰*(Access Token)*을 발급하는 것에 대한 구조*(framework)*로 볼 수 있습니다.
 
+
 ### 2. 구성요소
 
 1. **Client**
