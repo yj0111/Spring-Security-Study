@@ -303,3 +303,7 @@ public class RedisService {
 
 ----
 
+kakao:
+client-id: ebf2362b68dd4daf08301e8dd5a47ff5 # REST API키
+client-secret: SIf3dJQvspMcSszhSfDig7uuXUNMmxGO # 카카오로그인 > 보안 > 코드 발급
+
